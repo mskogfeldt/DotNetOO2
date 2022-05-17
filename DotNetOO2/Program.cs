@@ -1,21 +1,21 @@
-﻿using System;
+﻿using DotNetOO2;
+using System;
 using System.Collections.Generic;
 
 // See https://aka.ms/new-console-template for more information
 //Console.WriteLine("Hello, World!");
 
 bool keepOn = true;
-int currentPartysHeadCount;
-int currentPartysTotalCost;
+int currentPartysHeadCount = 0;
+int currentPartysTotalCost = 0;
 
 List<int> agesOfCustomers = new List<int>() { };
-enum InputState
-{
-    MainMenu, QuitApp, InputNumberOfCustomers, BuyTickets, CutingEdgeCinemaAppFunction
-
-}
-
 InputState currentInputState = InputState.MainMenu;
+
+ProgramLoop();
+
+
+
 
 void ProgramLoop()
 {
@@ -46,7 +46,8 @@ void BookingSystem()
             }
             else if (userInput == "2")
             {
-                Console.WriteLine("0");
+                Console.WriteLine("TextThing");
+                currentInputState = InputState.CutingEdgeCinemaAppFunction;
             }
             else if (userInput == "3")
             {
@@ -159,7 +160,7 @@ bool CheckUserInput(string userInput)
 string[] SplitText(string text)
 {
     //List<string> splitedString = new List<string>() { };
-    string[] splitedString = text.Split();
+    string[] splitedString = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
     //return splitedString.Select(s => s.Trim()).ToArray();
     return splitedString;
 
