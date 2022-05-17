@@ -31,8 +31,10 @@ void BookingSystem()
             Console.WriteLine("Press 0 to close This app: ");
             Console.WriteLine("Press 1 to buy tickets: We also provide a service that calculates the total cost ");
             Console.WriteLine("Press 2 to get to write a bunch of words and if it is at least three words we will print the third one! ");
+            Console.WriteLine("Press 3 to print a word of your choise 10 times");
 
-            //transform.Find("ActionPanel").gameObject.SetActive(true);
+
+
             string userInput = Console.ReadLine();
 
             if (userInput == "0")
@@ -51,7 +53,10 @@ void BookingSystem()
             }
             else if (userInput == "3")
             {
-                Console.WriteLine("0");
+                Console.WriteLine("Ten prints");
+                Console.WriteLine("Enter the word");
+                string input = UserInput();
+                TenTypes(input);
             }
             else Console.WriteLine("Wrong input. Please follow instructions");
 
@@ -159,7 +164,7 @@ bool CheckUserInput(string userInput)
 
 string[] SplitText(string text)
 {
-    //List<string> splitedString = new List<string>() { };
+    
     string[] splitedString = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
     //return splitedString.Select(s => s.Trim()).ToArray();
     return splitedString;
@@ -176,6 +181,14 @@ void TextThingy()
     else Console.WriteLine("To few words for uss to print the third one");
 
     currentInputState = InputState.MainMenu;
+}
+
+void TenTypes(string input)
+{
+    for (int i = 0; i < 10; i++)
+    {
+        Console.Write((i+1) + "." + input + " ");
+    }
 }
 
 

@@ -8,7 +8,7 @@ namespace DotNetOO2
 {
     public enum InputState
     {
-        MainMenu, QuitApp, InputNumberOfCustomers, BuyTickets, CutingEdgeCinemaAppFunction
+        MainMenu, QuitApp, InputNumberOfCustomers, BuyTickets, CutingEdgeCinemaAppFunction, TenPrints
 
     }
 }
